@@ -26,6 +26,7 @@ def generate_chicken_data(n=1000):
 
         # Generate health status using simple rule logic
         score = sum([
+
             40.0 <= temp <= 42.5,
             250 <= heart <= 350,
             activity >= 7,
