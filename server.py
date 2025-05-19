@@ -2,7 +2,13 @@ from flask import Flask, request, jsonify
 from waitress import serve
 import joblib
 import pandas as pd
+import os
 
+
+
+
+
+PORT = int(os.environ.get("PORT", 5000))  # default to 5000 for local dev
 app = Flask(__name__)
 
 # Load the model and encoders
@@ -57,4 +63,5 @@ def predict():
     return jsonify({'prediction': prediction_label[0]})
 
 if __name__ == '__main__':
-    serve(app, host="0.0.0.0", port=5000)
+    serve(app, host="0.0.0.0", port=PORT)
+
