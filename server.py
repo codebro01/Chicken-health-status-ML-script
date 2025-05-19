@@ -18,7 +18,7 @@ feather_encoder = model_bundle['feather_encoder']
 comb_encoder = model_bundle['comb_encoder']
 status_encoder = model_bundle['status_encoder']
 
-print('prediction:', model_bundle)
+print('prediction:', model_bundle, flush=True)
 
 
 @app.route('/predict', methods=['POST'])
